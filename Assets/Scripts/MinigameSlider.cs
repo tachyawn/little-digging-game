@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class MinigameSlider : MonoBehaviour
 {
     Slider _minigameSlider;
+    [SerializeField] GameObject _sliderComponents;
     [SerializeField] Image _sliderCenter;
 
     public bool _successfulHit = false;
@@ -23,12 +24,12 @@ public class MinigameSlider : MonoBehaviour
     private void Awake() 
     {
         _minigameSlider = GetComponent<Slider>();
-        gameObject.SetActive(false);
+        _sliderComponents.SetActive(false);
     }
 
     public void OnMinigameStart(float centerWidth, int speed) //Pass in values between 0 and 1
     {
-        gameObject.SetActive(true);
+        _sliderComponents.SetActive(true);
         //On successive wins, the speed of the slider increases to a max
         if (speed >= 2) speed = 2;
         _frequency = 2 + (1 * speed);
@@ -83,7 +84,7 @@ public class MinigameSlider : MonoBehaviour
             _digMultiplier = 1.0f;
         }
 
-        gameObject.SetActive(false);
+        _sliderComponents.SetActive(false);
         return _digMultiplier;
     }
 }

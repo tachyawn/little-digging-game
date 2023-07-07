@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19e6575eed8752f4da018e59da2f8cb8, type: 3}
   m_Name: SteelShovel
   m_EditorClassIdentifier: 
-  _toolName: 
-  _toolStrength: 0
+  _toolName: Steel Shovel
+  _toolStrength: 2

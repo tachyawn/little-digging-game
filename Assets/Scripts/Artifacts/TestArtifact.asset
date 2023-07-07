@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e60090159a99b4e8e85d8834cc4761, type: 3}
   m_Name: TestArtifact
   m_EditorClassIdentifier: 
-  _name: 
+  _name: Test Artifact
   _sprite: {fileID: 0}
-  _description: 
-  _value: 0
+  _description: A test artifact, not meant to be found or read in the full game.
+  _value: 1000

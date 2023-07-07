@@ -6,10 +6,12 @@ using Rewired;
 public class PlayerController : MonoBehaviour
 {
     public static bool inPlay = true;
+    public float _money = 0f;
 
     Player _player; // The Rewired Player
     DigSystem _digSystem;
     Rigidbody2D _rB;
+    UIManager _uiManager;
 
     [SerializeField] int playerId = 0;
     [SerializeField] float _walkSpeed = 6f;
@@ -22,6 +24,11 @@ public class PlayerController : MonoBehaviour
         _player = ReInput.players.GetPlayer(playerId);
         _rB = GetComponent<Rigidbody2D>();
         _digSystem = GetComponent<DigSystem>();
+    }
+
+    private void Start() 
+    {
+        _uiManager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
     }
 
     // Update is called once per frame
@@ -40,6 +47,12 @@ public class PlayerController : MonoBehaviour
         if (_player.GetButtonDown("Dig"))
         {
             _digSystem.Dig();
+        }
+        else if (_player.GetButtonDown("SuperDig"))
+
+        if (_player.GetButtonDown("Pause"))
+        {
+            _uiManager.Pause();
         }
     }
 

@@ -12,8 +12,8 @@ public class UIManager : MonoBehaviour
     //List<Text> _textList = new List<Text>(); //Used to update all text across menus
 
     [SerializeField] GameObject _defaultMenu;
+    [SerializeField] GameObject _defaultDigMenu;
     [SerializeField] GameObject _pauseMenu;
-    [SerializeField] GameObject _inventoryMenu;
     [SerializeField] bool _autoSetDefaultActive = false; //When changing menus, sets the default active if none else are
     GameObject _activeMenu;
 
@@ -27,21 +27,21 @@ public class UIManager : MonoBehaviour
         }
     }
     
-    public bool Pause()
+    public void Pause()
     {
         SetMenuActive(_pauseMenu.name);
 
         if (_activeMenu != null)
         {
+            _isPaused = true;
             Time.timeScale = 0;
             PlayerController.inPlay = false;
-            return true;
         }
         else
         {
+            _isPaused = false;
             Time.timeScale = 1;
             PlayerController.inPlay = true;
-            return false;
         }
     }
 
@@ -78,9 +78,14 @@ public class UIManager : MonoBehaviour
         if (index != -1)
         {
             _activeMenu = _menuList[index];
+
+            if (_activeMenu == _pauseMenu) _isPaused = true;
+            else _isPaused = false;
+
             return true;
         }
 
+        _isPaused = false; //Cannot be paused if no menu is active
         return false;
     }
 }
