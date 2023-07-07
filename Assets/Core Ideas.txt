@@ -1,0 +1,19 @@
+Main Idea: Game where you play as a treasure hunter on the beach, essentially a vertical-scrolling digging game. But you must reach 
+the treasure before the tide comes in and flushes you back to the top of the hole.
+    - You start with a dinky metal detector that can locate some coins at around ~5 units deep, and a dinky shovel that digs slowly (in some way).
+    - As you make attempts you find more coins and gold and things that can be used to purchase better materials.
+    - Eventually, the goal is to reach the very bottom of the hole within the time limit (when the tide comes in).
+
+Mechanics:
+    - The tiles making up the underground will be random and regenerate after each attempt.
+    - The deeper the player goes, the richer in minerals/coins/antiques the tiles will be.
+    - Upgrades for the shovel and the metal detector can be bought/built with a mix of coins and minerals.
+
+Setting:
+    - Island beach, with a small store an an old museum.
+
+Bonus Stuff:
+    - Different antiques can be found as you get deeper, which can then be donated to a museum.
+        - Museum tells you what level (sand, clay, dirt, etc.) unfound antiques can be in, and an upgrade for the metal
+        detector can search for them too.
+    - Spots chosen to dig closer to the ocean have a shorter time limit, but have more minerals and antiques.

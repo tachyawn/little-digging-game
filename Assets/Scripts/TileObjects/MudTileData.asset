@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c627a4858737d4bb68b23871cfe823, type: 3}
+  m_Name: MudTileData
+  m_EditorClassIdentifier: 
+  _tileName: Mud
+  _tile: {fileID: 11400000, guid: 9e403758b081dc44993123ce3d662c8c, type: 2}
+  _tileStrength: 4
+  _appearsAtDepth: 6
+  _disappearsAtDepth: 20
+  _minigameCenterWidth: 0.4
