@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
         foreach (var menu in GameObject.FindGameObjectsWithTag("Menu"))//Change to FindObjectsOfType<Menu>(true)
         {
             _menuList.Add(menu.gameObject);
-            menu.gameObject.SetActive(false);
+            //menu.gameObject.SetActive(false);
         }
     }
     

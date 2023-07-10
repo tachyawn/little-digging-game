@@ -7,6 +7,8 @@ TagManager:
   - TileGenerator
   - MinigameSlider
   - SceneLoader
+  - UIManager
+  - Menu
   layers:
   - Default
   - TransparentFX
