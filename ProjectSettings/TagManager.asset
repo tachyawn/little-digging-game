@@ -9,6 +9,11 @@ TagManager:
   - SceneLoader
   - UIManager
   - Menu
+  - DiggableTileMap
+  - CoinTileMap
+  - StartingCell
+  - CoinGenerator
+  - HighlightMap
   layers:
   - Default
   - TransparentFX
@@ -16,7 +21,7 @@ TagManager:
   - Interactable
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 

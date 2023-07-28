@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 public class DigSystem : MonoBehaviour
 {
     TileGenerator _tileGenerator;
+    CoinGenerator _coinGenerator;
     MinigameSlider _miniGameSlider;
 
     public static bool _digMode = true;
@@ -15,6 +16,7 @@ public class DigSystem : MonoBehaviour
     int _winsInARow = 0;
 
     [SerializeField] Tilemap _digMap;
+    [SerializeField] Tilemap _coinMap;
     [SerializeField] Tilemap _highlightMap;
     [SerializeField] Tile _highlightTile;
     TileData _selectedTileData;
@@ -23,8 +25,9 @@ public class DigSystem : MonoBehaviour
 
     private void Start() 
     {
-        _tileGenerator = GameObject.FindGameObjectWithTag("TileGenerator").GetComponent<TileGenerator>();
-        _miniGameSlider = GameObject.FindGameObjectWithTag("MinigameSlider").GetComponent<MinigameSlider>();
+        if (!_tileGenerator) _tileGenerator = GameObject.FindGameObjectWithTag("TileGenerator").GetComponent<TileGenerator>();
+        if (!_coinGenerator) _coinGenerator = GameObject.FindGameObjectWithTag("CoinGenerator").GetComponent<CoinGenerator>();
+        if (!_miniGameSlider) _miniGameSlider = GameObject.FindGameObjectWithTag("MinigameSlider").GetComponent<MinigameSlider>();
     }
 
     // Update is called once per frame
@@ -51,6 +54,8 @@ public class DigSystem : MonoBehaviour
 
     public void Dig()
     {
+        if (!_digMode) return;
+
         //If no tile at selected spot, return
         if (!_selectedTileData) return;
         _playingMinigame = !_playingMinigame; //Flip-flop inputs, One starts the minigame and the other stops and calculates values
@@ -69,5 +74,16 @@ public class DigSystem : MonoBehaviour
         }
 
         if (_currentTileStrength <= 0) _digMap.SetTile(_selectedCell, null);
+    }
+
+    public void PickUpCoin()
+    {
+        Vector3Int coinCell = _coinMap.WorldToCell(transform.position);
+        CollectableData _collectedCoin = _coinGenerator.GetSelectedCoinData(coinCell);
+        PlayerController._money += _collectedCoin._value;
+
+        //Play pickup sound/animation here
+
+        _coinMap.SetTile(coinCell, null);
     }
 }

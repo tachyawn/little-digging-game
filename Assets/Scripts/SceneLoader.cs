@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public static int _currentLevel => SceneManager.GetActiveScene().buildIndex;
+    public static int _currentSceneIndex => SceneManager.GetActiveScene().buildIndex;
+    public static Scene _currentScene => SceneManager.GetActiveScene();
 
     public void LoadStartScene()
     {
@@ -30,10 +31,5 @@ public class SceneLoader : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-    }
-
-    public int GetCurrentLevelIndex()
-    {
-        return SceneManager.GetActiveScene().buildIndex;
     }
 }

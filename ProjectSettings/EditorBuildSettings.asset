@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Beach_Dig.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/_Scenes/Museum.unity
+    guid: cce3f2f3a93971244a9f6ac332cc6b3a
   m_configObjects: {}
